@@ -1,0 +1,145 @@
+.container-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  border: #1a1a1a solid 1px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.container-todo h1 {
+  font-size: 2em;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0px 10px 0px;
+  color: #fff;
+  border-bottom: 1px solid #1a1a1a;
+}
+.container-todo ul {
+  list-style: none;
+  padding: 0px 10px 10px 10px;
+  margin: 0px;
+  gap: 10px;
+  width: 100%;
+}
+
+.container-todo ul .todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  transition: ease-in-out 0.5s;
+  border-bottom: 1px solid #121111;
+  max-height: 100%;
+  max-width: 100%; 
+}
+
+.container-todo ul .todo-item-completed {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #545252;
+  transition: ease-in-out 0.5s;
+  border-radius: 2px;
+  border-bottom: 1px solid #121111;
+}
+.container-todo input {
+  display: flex;
+  justify-content: space-around;
+}
+.container-todo input:focus {
+  outline: none;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+  padding: 10px;
+}
+.input-task{
+  max-width: 100%;
+  width: 100%;
+}
+.btn-add {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  width: 100%;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 20px;
+}
+.btn-delete:hover {
+  color: #ff0000;
+}
+.check-task {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+}
+.btn-delete,
+.check-task {
+  visibility: hidden;
+}
+.container-todo li:hover .btn-delete, li:hover .check-task {
+  visibility: visible;
+  transition: ease-in-out 0.5s;
+}
+.task-title {
+  font-size: 1em;
+  color: #fff;
+}
+.task-completed {
+  transition: ease-in-out 0.5s;
+  color: #aaa;
+}
+.new-task-expand {
+  overflow: hidden;
+  animation: expandTask 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes expandTask {
+  from {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    max-height: 50px; /* Ajusta según el tamaño de tu item */
+    opacity: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.task-collapse {
+  overflow: hidden;
+  animation: collapseTask 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes collapseTask {
+  from {
+    max-height: 100px;
+    opacity: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
