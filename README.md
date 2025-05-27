@@ -12,7 +12,7 @@ Este proyecto es una **lista de tareas**, creado usando **Vite** ![vite 2](https
 
 ## ✅ Tecnicas
 
-- useSates de React
+- useStates de React
 - useEffect de React
 - Persistencia de datos en LocalStorage
 
