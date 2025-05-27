@@ -9,6 +9,8 @@
   border: #1a1a1a solid 1px;
   padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+
 }
 .container-todo h1 {
   font-size: 2em;
@@ -99,6 +101,31 @@
 .task-title {
   font-size: 1em;
   color: #fff;
+  font-weight: 500;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 10px;
+  transition: opacity 0.2s, color 0.2s;
+  opacity: 1;
+}
+
+.task-title.editing {
+  opacity: 0;
+}
+
+.input-task-editing {
+  animation: fadeInInput 0.2s ease;
+}
+
+@keyframes fadeInInput {
+  from {
+    opacity: 0;
+    transform: scaleX(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 .task-completed {
   transition: ease-in-out 0.5s;

@@ -104,7 +104,7 @@ function App() {
                 {editingId === t.id ? (
                   <input
                     type="text"
-                    className='input-task'
+                    className="input-task input-task-editing"
                     value={editingTitle}
                     autoFocus
                     onChange={handleEditChange}
@@ -112,7 +112,13 @@ function App() {
                     onKeyDown={(e) => handleEditKeyDown(e, t.id)}
                   />
                 ) : (
-                  <span onClick={() => handleEdit(t.id, t.title)} className={t.state ? 'task-completed' : 'task-title'}>
+                  <span
+                    onClick={() => handleEdit(t.id, t.title)}
+                    className={
+                      (t.state ? 'task-completed' : 'task-title') +
+                      (editingId === t.id ? ' editing' : '')
+                    }
+                  >
                     {t.title}
                   </span>
                 )}
