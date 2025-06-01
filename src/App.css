@@ -10,9 +10,8 @@
   padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   min-width: 300px;
-
 }
-.container-todo h1 {
+.container-todo .title-light {
   font-size: 2em;
   width: 100%;
   text-align: center;
@@ -20,7 +19,29 @@
   padding: 10px 0px 10px 0px;
   color: #fff;
   border-bottom: 1px solid #1a1a1a;
+  transition: ease-in-out 0.8s;
 }
+.container-todo .title-dark {
+  color: #242424;
+  font-size: 2em;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #1a1a1a;
+  transition: ease-in-out 0.4s;
+}
+
+.container-todo .task-dark {
+  color: #fff;
+  transition: ease-in-out 0.5s;
+}
+
+.container-todo .task-light {
+  color: #242424;
+  transition: ease-in-out 0.5s;
+}
+
 .container-todo ul {
   list-style: none;
   padding: 0px 10px 10px 10px;
@@ -36,7 +57,7 @@
   transition: ease-in-out 0.5s;
   border-bottom: 1px solid #121111;
   max-height: 100%;
-  max-width: 100%; 
+  max-width: 100%;
 }
 
 .container-todo ul .todo-item-completed {
@@ -51,6 +72,8 @@
 .container-todo input {
   display: flex;
   justify-content: space-around;
+  background-color: #292929;
+  color: #fff;
 }
 .container-todo input:focus {
   outline: none;
@@ -58,7 +81,7 @@
   border-radius: 4px;
   padding: 10px;
 }
-.input-task{
+.input-task {
   max-width: 100%;
   width: 100%;
 }
@@ -70,18 +93,30 @@
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
   transition: border-color 0.25s;
   width: 100%;
 }
 
-.btn-delete {
+.btn-delete-dark {
   background: none;
   border: none;
   cursor: pointer;
   padding-left: 20px;
+  color: #fff;
 }
-.btn-delete:hover {
+.btn-delete-light {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 20px;
+  color: #242424;
+}
+.btn-delete-dark:hover {
+  color: #ff0000;
+}
+.btn-delete-light:hover {
   color: #ff0000;
 }
 .check-task {
@@ -90,11 +125,14 @@
   cursor: pointer;
   border-radius: 999px;
 }
-.btn-delete,
+.btn-delete-dark,
+.btn-delete-light,
 .check-task {
   visibility: hidden;
 }
-.container-todo li:hover .btn-delete, li:hover .check-task {
+.container-todo li:hover .btn-delete-dark,
+li:hover .check-task,
+li:hover .btn-delete-light {
   visibility: visible;
   transition: ease-in-out 0.5s;
 }
@@ -144,7 +182,7 @@
     padding-bottom: 0;
   }
   to {
-    max-height: 50px; /* Ajusta según el tamaño de tu item */
+    max-height: 50px;
     opacity: 1;
     padding-top: 10px;
     padding-bottom: 10px;
